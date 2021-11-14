@@ -1,0 +1,23 @@
+
+.checkbox:checked ~ .first-nav-sm-list .menu-sm {
+  left: 0;
+}
+
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotate(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .line-1 {
+  transform: rotate(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .line-2 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.checkbox:checked ~ .hamburger-menu .line-3 {
+  transform: rotate(40deg);
+}
+

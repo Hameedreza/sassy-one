@@ -1,0 +1,55 @@
+.first-nav {
+  grid-column: 7 / -1;
+  grid-row: 1 / 2;
+
+  @include responce(xl) {
+    grid-column: 6 / 10;
+  }
+  @include responce(lg) {
+    grid-column: 5 / 10;
+  }
+
+  @include navigation;
+
+  @include responce(md) {
+    grid-column: 4 / 10;
+  }
+  @include responce(sm) {
+    display: none;
+  }
+}
+
+.first-nav-sm {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  margin-top: 5rem;
+  opacity: 0;
+  display: none;
+  color: color(seconday);
+  @include navigation-sm;
+  @include responce(sm) {
+    opacity: 1;
+    display: block;
+    .menu-sm {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      top: 5rem;
+      left: -70rem;
+      transition: left 0.5s ease-in-out;
+    }
+  }
+}
+
+.second-nav {
+  grid-column: 3 / 8;
+  grid-row: 3 / 4;
+  @include navigation;
+
+  @include responce(lg) {
+    grid-column: 2 / 9;
+  }
+  @include responce(md) {
+    grid-column: 1 / 10;
+  }
+}

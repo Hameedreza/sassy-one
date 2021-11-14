@@ -1,0 +1,23 @@
+.heading {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  text-align: center;
+
+  @include responce(sm) {
+    margin: 4rem 1rem;
+    transform: translateY(4rem);
+  }
+
+  &-link {
+    text-decoration: none;
+    color: color(primary);
+    display: inline-block;
+  }
+  &-text {
+    font-family: "great vibes", cursive;
+    font-size: size(xl) * 2;
+    font-weight: lighter;
+    letter-spacing: 0.5rem;
+    margin-bottom: 3rem;
+  }
+}

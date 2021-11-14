@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+  // in order to change the html fontsize into 10px per rem / 10 / 16 = .625 * 100 = 62.5%
+  font-size: 62.5%;
+  @include responce(md) {
+    font-size: 56.25%;
+  }
+  @include responce(sm) {
+    font-size: 50%;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(
+      6rem,
+      1fr
+    );
+  grid-template-rows: repeat(4, min-content);
+  row-gap: 1.6rem;
+  background-color: color(tertiary);
+}

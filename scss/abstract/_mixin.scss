@@ -1,0 +1,94 @@
+@mixin navigation {
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  &-item {
+    list-style: none;
+  }
+  &-link {
+    color: color(primary);
+    text-decoration: none;
+    font-size: size(sm);
+    transition: color 0.4s ease;
+
+    &:hover {
+      color: lighten(color(primary), 40%);
+    }
+  }
+}
+
+@mixin navigation-sm {
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+  &-item {
+    list-style: none;
+    padding: 2rem 0;
+  }
+  &-link {
+    color: color(primary);
+    text-decoration: none;
+    font-size: size(sm);
+    transition: color 0.4s ease;
+  }
+}
+
+@mixin flexPosition($justCont: center, $alignItem: center) {
+  display: flex;
+  justify-content: $justCont;
+  align-items: $alignItem;
+}
+
+@mixin footerList {
+  &-wrapper {
+    text-align: center;
+  }
+
+  &-heading {
+    font-size: size(lg);
+    color: color(primary);
+  }
+  &-item {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  &-link {
+    text-decoration: none;
+    font-size: size(xs);
+    color: lighten(color(primary), 15%);
+    transition: color 0.2s;
+    &:hover {
+      color: lighten(color(primary), 35%);
+    }
+  }
+}
+
+@mixin responce($breakpiont) {
+  @if ($breakpiont == xl) {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if ($breakpiont == lg) {
+    @media screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+  @if ($breakpiont == md) {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if ($breakpiont == sm) {
+    @media screen and (max-width: 560px) {
+      @content;
+    }
+  }
+}

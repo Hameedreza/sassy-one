@@ -1,0 +1,112 @@
+.products {
+  grid-column: 1 / -1;
+  grid-row: 3 / span 1;
+  &-wrapper {
+    @include flexPosition;
+  }
+  &-heading {
+    margin: 5rem 0;
+
+    &-text {
+      font-size: size(lg) + 2rem;
+      text-align: center;
+      font-weight: 300;
+      color: color(primary);
+    }
+  }
+}
+
+.product {
+  position: relative;
+  cursor: pointer;
+
+  &-img {
+    width: 100%;
+    transition: all 1s 0.2s ease;
+  }
+
+  &:hover .product-description {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover .product-img {
+    opacity: 0.5;
+  }
+
+  &-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparentize(color(secondary), 0.4);
+    padding: 2rem;
+    border: 0.1rem solid color(primary);
+    border-radius: 0.5rem;
+    color: color(primary);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s 0.2s ease;
+
+    @include responce(lg) {
+      padding: 1rem;
+    }
+
+    @include responce(sm) {
+      border: none;
+      background: none;
+    }
+
+    &-heading {
+      font-size: size(xl);
+
+      @include responce(lg) {
+        font-size: size(md);
+      }
+
+      @include responce(sm) {
+        display: none;
+      }
+    }
+    &-price {
+      font-size: size(lg);
+      font-weight: 300;
+      margin: 1rem 0;
+
+      @include responce(lg) {
+        font-size: size(sm);
+      }
+
+      @include responce(sm) {
+        display: none;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+    &-btn {
+      text-decoration: none;
+      font-size: size(xs);
+      color: color(quaternary);
+      display: block;
+      padding: 0.5rem 1rem;
+      border: 0.1rem solid color(quaternary);
+      background-color: lighten(color(primary), 20%);
+
+      @include responce(lg) {
+        padding: 0.2rem 0.5rem;
+      }
+
+      @include responce(sm) {
+        padding: 0.5rem 0.7rem;
+        width: 7rem;
+      }
+    }
+  }
+}
+
+.products-btn {
+  @include flexPosition;
+}
